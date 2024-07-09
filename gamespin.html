@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Idea Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Game Idea Spinner</h1>
+    <button onclick="generateRandomItems()">Generate</button>
+    <div class="result" id="result"></div>
+
+    <script>
+        // Define the lists
+        const list1 = ["Action", "Adventure", "Card", "Fighting", "Horror", "Idle", "MMO", "Party", "Puzzle", "Racing", "RPG", "Sandbox", "Shooter", "Simulation", "Sports", "Strategy", "Trivia"];
+        const list2 = [
+"4x", "Action RPG", "Auto-battler", "Automation", "Base-building", "Beat-'em-up", "Bullet hell", "City Builder", "Collectathon", "Colony Builder", "Competitive", "CRPG", "Dance", "Extraction", "Farming", "Fishing", "First-person Shooter", "Gacha", "Guitar hero-like", "Hack n' Slash", "JRPG", "Life Simulation", "Looter Shooter", "Management", "Mecha", "Metroidvania", "MOBA", "Monster Tamer", "Open World", "Platformer", "Programming/Scripting", "Real-time Strategy", "Roguelike", "Roguelite", "Space", "Shoot-'em-up", "Soulslike", "Stealth", "Survival", "Tactical", "Third-person Shooter", "Tower Defense", "Turn-based", "VampireSurvivors-like", "Visual Novel", "Wave-based"];
+        const list3 = ["2D", "2.5D", "3D", "Isometric", "Side-scrolling", "Orthographic", "Over-the-shoulder", "First-person", "Third-person", "VR"];
+
+        // Function to get a random item from a list
+        function getRandomItem(list) {
+            const randomIndex = Math.floor(Math.random() * list.length);
+            return list[randomIndex];
+        }
+
+        // Function to generate and display random items
+        function generateRandomItems() {
+            const item1 = getRandomItem(list1);
+            const item2 = getRandomItem(list2);
+            const item3 = getRandomItem(list3);
+
+            // Display the result in the HTML
+            document.getElementById("result").innerHTML = `Game Type: ${item1}, ${item2}, ${item3}`;
+        }
+    </script>
+</body>
+</html>
